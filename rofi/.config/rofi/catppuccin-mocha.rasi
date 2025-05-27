@@ -1,3 +1,19 @@
+configuration {
+  normal-window: true;
+  modi: "run,window,combi";
+  icon-theme: "Oranchelo";
+  show-icons: true;
+  terminal: "alacritty";
+  drun-display-format: "{icon} {name}";
+  location: 0;
+  disable-history: false;
+  hide-scrollbar: true;
+  display-combi: " 🖥️  All ";
+  display-run: " 🏃  Run ";
+  display-window: " 🪟  Window";
+  sidebar-mode: true; 
+}
+
 * {
     bg-col:  #1e1e2e;
     bg-col-light: #1e1e2e;
