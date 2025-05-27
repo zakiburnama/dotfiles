@@ -73,6 +73,8 @@ alias vim='nvim'
 alias c='clear'
 alias vfd='nvim "$(fd --type f | fzf)"'
 alias vf='nvim "$(fzf)"'
+alias vim-be-good-docker='docker run -it --rm brandoncc/vim-be-good:stable'
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
