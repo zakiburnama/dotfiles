@@ -79,3 +79,5 @@ alias vim-be-good-docker='docker run -it --rm brandoncc/vim-be-good:stable'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+export PATH="$HOME/bin:$PATH"
