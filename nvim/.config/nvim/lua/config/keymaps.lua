@@ -8,4 +8,6 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Resume" }
 )
 
-vim.keymap.set("n", "<leader>ut", ":SelectTheme<CR>", { desc = "Toggle Theme" })
+vim.keymap.set("n", "<leader>u1", ":SelectTheme<CR>", { desc = "Toggle Theme" })
+
+vim.keymap.set("n", "<leader>u2", "<cmd>ToggleTransparency<CR>", { desc = "Toggle Transparency" })
