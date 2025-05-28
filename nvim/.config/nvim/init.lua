@@ -2,3 +2,4 @@
 require("config.lazy")
 require("plugins.plugins")
 require("config.theme")
+require("config.transparent")
