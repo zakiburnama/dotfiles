@@ -9,6 +9,9 @@ return {
   { "catppuccin/nvim", name = "catppuccin" },
   { "vague2k/vague.nvim" },
 
+  -- transparent
+  { "xiyaowong/transparent.nvim" },
+
   --  -- Configure LazyVim to load gruvbox
   --  {
   --    "LazyVim/LazyVim",
