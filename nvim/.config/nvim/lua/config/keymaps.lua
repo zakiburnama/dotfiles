@@ -11,3 +11,5 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>u1", ":SelectTheme<CR>", { desc = "Toggle Theme" })
 
 vim.keymap.set("n", "<leader>u2", "<cmd>ToggleTransparency<CR>", { desc = "Toggle Transparency" })
+
+vim.keymap.set("n", "<leader>z1", ":VimBeGood<CR>", { desc = "Play VimBeGood" })
