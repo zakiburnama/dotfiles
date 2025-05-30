@@ -1,9 +1,9 @@
 return {
   "sphamba/smear-cursor.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("smear_cursor").setup()
-  end,
+  -- event = "VeryLazy",
+  -- config = function()
+  --   require("smear_cursor").setup()
+  -- end,
 }
 
 -- return {
