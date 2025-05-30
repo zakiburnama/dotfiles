@@ -17,3 +17,5 @@ vim.keymap.set("n", "<leader>z1", ":VimBeGood<CR>", { desc = "Play VimBeGood" })
 vim.keymap.set("n", "<leader>u3", function()
   require("config.smear").toggle()
 end, { desc = "Toggle Smear Cursor" })
+
+vim.keymap.set("n", "<leader>u4", "<cmd>ToggleSmear<CR>", { desc = "Toggle Smear" })
