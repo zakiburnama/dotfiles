@@ -102,11 +102,11 @@ end
 function M.toggle()
   if value == "0" then
     vim.notify("Smear Cursor: ON", vim.log.levels.INFO)
-    write_state("1")
+    write_state(1)
     -- M.disable()
   else
     vim.notify("Smear Cursor: OFF", vim.log.levels.INFO)
-    write_state("0")
+    write_state(0)
     -- M.enable()
   end
 end
