@@ -8,6 +8,7 @@ local function load_theme()
     f:close()
     if name then
       vim.cmd.colorscheme(name)
+      vim.notify("Theme set to " .. name, vim.log.levels.INFO)
     end
   end
 end
