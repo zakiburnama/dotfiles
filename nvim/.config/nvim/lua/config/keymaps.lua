@@ -8,8 +8,12 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Resume" }
 )
 
-vim.keymap.set("n", "<leader>u1", ":SelectTheme<CR>", { desc = "Toggle Theme" })
+-- vim.keymap.set("n", "<leader>u1", ":SelectTheme<CR>", { desc = "Toggle Theme" })
 
 vim.keymap.set("n", "<leader>u2", "<cmd>ToggleTransparency<CR>", { desc = "Toggle Transparency" })
 
 vim.keymap.set("n", "<leader>z1", ":VimBeGood<CR>", { desc = "Play VimBeGood" })
+
+vim.keymap.set("n", "<leader>u3", function()
+  require("config.smear").toggle()
+end, { desc = "Toggle Smear Cursor" })
