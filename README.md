@@ -1,5 +1,5 @@
 # Personal dotfiles
-`hello there`
+`hello there nerd`
 
 # Requirements
 `Must have`
