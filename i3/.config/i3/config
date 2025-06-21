@@ -35,9 +35,45 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-#### new added
-#exec --no-startup-id picom
-exec --no-startup-id picom --backend glx
+#### new added ####
+
+# Compositor foR X11 using Picom : Provides transparency, shadows, fading, and vsync.
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# change background using feh
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/ae86.jpg
+
+# Start xfsettingsd at login
+exec --no-startup-id xfsettingsd
+
+# to auto star use theme, but not work yet
+exec --no-startup-id export GTK_THEME=Arc-Dark
+
+# start Clipman on login
+exec --no-startup-id xfce4-clipman --daemon
+
+# Set Flameshot to Autostart
+exec --no-startup-id flameshot
+
+# Set gaps between windows
+gaps inner 10
+gaps outer 10
+
+#### end new added ####
+
+#### new keybining ####
+
+# Set Keybinding for Screenshot with Flameshot
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+
+# Clipboard history shortcut
+#bindsym $mod+Shift+v exec --no-startup-id xfce4-clipman-history
+
+# Brightness control using brightnessctl
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+#### end new keybining ####
 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -170,10 +206,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
