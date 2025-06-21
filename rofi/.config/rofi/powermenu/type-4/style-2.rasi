@@ -28,9 +28,9 @@ configuration {
     textbox-font:                "Iosevka Nerd Font 14";
     element-text-font:           "feather 64";
 
-    background-window:           black/30%;
-    background-normal:           white/5%;
-    background-selected:         white/15%;
+    background-window:           black/50%;
+    background-normal:           white/30%;
+    background-selected:         red/70%;
     foreground-normal:           white;
     foreground-selected:         white;
 }
@@ -122,7 +122,7 @@ element-text {
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
-    vertical-align:              0.5;
+    // vertical-align:              0.5;
     horizontal-align:            0.5;
 }
 element selected.normal {
