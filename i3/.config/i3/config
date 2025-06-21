@@ -43,11 +43,13 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 # change background using feh
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/ae86.jpg
 
+# Launch xsettingsd to apply GTK themes, icons, fonts, etc.
+exec_always --no-startup-id xsettingsd &
+#
 # Start xfsettingsd at login
-exec --no-startup-id xfsettingsd
-
+# exec --no-startup-id xfsettingsd
 # to auto star use theme, but not work yet
-exec --no-startup-id export GTK_THEME=Arc-Dark
+# exec --no-startup-id export GTK_THEME=Arc-Dark
 
 # start Clipman on login
 exec --no-startup-id xfce4-clipman --daemon
@@ -73,6 +75,14 @@ bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# Start Rofi Launcher
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t7
+# Start Rofi Powermenu
+bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/scripts/powermenu_t4
+# Start rofimoji for emoji
+bindsym $mod+m exec rofimoji
+# bindsym $mod+m exec rofimoji --selector-args="-theme ~/.config/rofi/launchers/type-4/style-2.rasi"
+
 #### end new keybining ####
 
 
@@ -96,7 +106,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
-bindsym $mod+d exec rofi -show drun
+#bindsym $mod+d exec rofi -show drun
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
