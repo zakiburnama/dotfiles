@@ -90,7 +90,25 @@ return {
           sections = {
             {
               pane = 1,
-              { section = "terminal", cmd = "fortune -s | cowsay", hl = "header", padding = 1, indent = 8 },
+              -- fortune is Linux-only (no Windows port). On win32 this renders
+              -- as plain static text instead of `section = "terminal"`:
+              -- that section type always opens a floating window pinned to a
+              -- fixed screen row, which doesn't scroll with the buffer and
+              -- looked "stuck" at the top. A literal { text = ... } item is
+              -- normal buffer content, so it scrolls like everything else.
+              vim.fn.has("win32") == 1 and function()
+                local cmd = [[powershell -NoProfile -Command "$q=@('Talk is cheap. Show me the code.','Any fool can write code that a computer can understand. Good programmers write code that humans can understand.','Premature optimization is the root of all evil.','First, solve the problem. Then, write the code.','Simplicity is the soul of efficiency.'); Get-Random -InputObject $q" | cowsay]]
+                local ok, out = pcall(vim.fn.system, cmd)
+                local text = (ok and vim.v.shell_error == 0) and out:gsub("\r\n", "\n"):gsub("\n+$", "")
+                  or "cowsay unavailable"
+                return { text = text, hl = "SnacksDashboardHeader", padding = 1, indent = 8 }
+              end or {
+                section = "terminal",
+                cmd = "fortune -s | cowsay",
+                hl = "header",
+                padding = 1,
+                indent = 8,
+              },
               { section = "header", padding = 1 },
               -- {
               --   section = "terminal",

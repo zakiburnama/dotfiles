@@ -23,7 +23,8 @@ return {
       {
         name = "personal",
         -- path = "~/vaults/personal",
-        path = "/run/media/zedora/Acer/Users/Acer/Documents/Obsidian Vault",
+        path = vim.fn.has("win32") == 1 and "C:/Users/ThinkPad/Documents/Obsidian-Vault"
+          or "/run/media/zedora/Acer/Users/Acer/Documents/Obsidian Vault",
       },
       -- {
       --   name = "work",
