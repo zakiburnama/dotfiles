@@ -13,74 +13,74 @@ config.default_prog = { "powershell.exe", "-NoLogo" }
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12
 
--- Theme colors below are managed by apply-theme.ps1 (see ahk/quickmenu
--- repo) -- keep the BEGIN/END marker lines intact; everything between them
--- gets replaced wholesale when a theme is applied from QuickMenu Light.
+-- Theme colors (and window_background_opacity, since transparency is
+-- theme-specific too -- vague is transparent, everything else isn't)
+-- below are managed by apply-theme.ps1 (see ahk/quickmenu repo) -- keep
+-- the BEGIN/END marker lines intact; everything between them gets
+-- replaced wholesale when a theme is applied from QuickMenu Light.
 -- BEGIN THEME COLORS
--- Catppuccin-Mocha, ported 1:1 from current-theme.conf
+-- Vague (vague2k/vague.nvim palette, ported 1:1) -- the one theme here
+-- that runs transparent (window_background_opacity below), so the
+-- wallpaper shows through.
 config.colors = {
-	foreground = "#CDD6F4",
-	background = "#1E1E2E",
+	foreground = "#CDCDCD",
+	background = "#141415",
 
-	cursor_bg = "#F5E0DC",
-	cursor_fg = "#1E1E2E",
-	cursor_border = "#F5E0DC",
+	cursor_bg = "#7E98E8",
+	cursor_fg = "#141415",
+	cursor_border = "#7E98E8",
 
-	selection_fg = "#1E1E2E",
-	selection_bg = "#F5E0DC",
+	selection_fg = "#CDCDCD",
+	selection_bg = "#333738",
 
-	split = "#B4BEFE",
-	visual_bell = "#F9E2AF",
+	split = "#878787",
+	visual_bell = "#F3BE7C",
 
 	ansi = {
-		"#45475A", -- black
-		"#F38BA8", -- red
-		"#A6E3A1", -- green
-		"#F9E2AF", -- yellow
-		"#89B4FA", -- blue
-		"#F5C2E7", -- magenta
-		"#94E2D5", -- cyan
-		"#BAC2DE", -- white
+		"#141415", -- black
+		"#D8647E", -- red
+		"#7FA563", -- green
+		"#F3BE7C", -- yellow
+		"#6E94B2", -- blue
+		"#BB9DBD", -- magenta
+		"#9BB4BC", -- cyan
+		"#CDCDCD", -- white
 	},
 	brights = {
-		"#585B70", -- bright black
-		"#F38BA8", -- bright red
-		"#A6E3A1", -- bright green
-		"#F9E2AF", -- bright yellow
-		"#89B4FA", -- bright blue
-		"#F5C2E7", -- bright magenta
-		"#94E2D5", -- bright cyan
-		"#A6ADC8", -- bright white
+		"#606079", -- bright black
+		"#D8647E", -- bright red
+		"#7FA563", -- bright green
+		"#F3BE7C", -- bright yellow
+		"#7E98E8", -- bright blue
+		"#AEAED1", -- bright magenta
+		"#B4D4CF", -- bright cyan
+		"#CDCDCD", -- bright white
 	},
 
 	tab_bar = {
-		background = "#11111B",
+		background = "#1C1C24",
 		active_tab = {
-			bg_color = "#CBA6F7",
-			fg_color = "#11111B",
+			bg_color = "#7E98E8",
+			fg_color = "#141415",
 		},
 		inactive_tab = {
-			bg_color = "#181825",
-			fg_color = "#CDD6F4",
+			bg_color = "#252530",
+			fg_color = "#606079",
 		},
 		inactive_tab_hover = {
-			bg_color = "#313244",
-			fg_color = "#CDD6F4",
+			bg_color = "#333738",
+			fg_color = "#CDCDCD",
 		},
 		new_tab = {
-			bg_color = "#11111B",
-			fg_color = "#CDD6F4",
+			bg_color = "#1C1C24",
+			fg_color = "#606079",
 		},
 	},
 }
+config.window_background_opacity = 0.85
 -- END THEME COLORS
 -- kitty's mark1/mark2/mark3 colors (kitty's text-marking feature) have no
 -- WezTerm equivalent and were skipped.
-
--- Opacity: kitty.conf has `background_opacity 0.85` commented out, so kitty
--- currently runs fully opaque. Mirrored as-is; uncomment to enable.
-config.window_background_opacity = 1.0
--- config.window_background_opacity = 0.85
 
 -- kitty's default window padding is 0 and was never overridden here.
 config.window_padding = {

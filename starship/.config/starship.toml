@@ -37,21 +37,22 @@ palette = 'active'
 # color values inside the markers get replaced when a theme is applied
 # from QuickMenu Light.
 # BEGIN THEME PALETTE
-# Catppuccin Mocha (official palette, matches the WezTerm/kitty theme).
-# color_fg0: dark text, for the BRIGHT segment backgrounds below.
-# color_fg1: light text, for the DARK segments (color_bg1/color_bg3).
+# Vague (vague2k/vague.nvim, already installed -- uses its real palette
+# 1:1, pulled from lua/vague/config/internal.lua, not invented). Standard
+# dark-theme polarity: color_fg0 is dark bg (for the pastel accent chips
+# below), color_fg1 is light fg (for the dark bg1/bg3 chips).
 [palettes.active]
-color_fg0 = '#11111b'   # crust
-color_fg1 = '#cdd6f4'   # text
-color_bg1 = '#1e1e2e'   # base: matches the terminal background, so the tail fades in seamlessly
-color_bg3 = '#313244'   # surface0
-color_blue = '#89b4fa'
-color_aqua = '#94e2d5'  # teal
-color_green = '#a6e3a1'
-color_orange = '#fab387' # peach
-color_purple = '#cba6f7' # mauve
-color_red = '#f38ba8'
-color_yellow = '#f9e2af'
+color_fg0 = '#141415'   # bg
+color_fg1 = '#cdcdcd'   # fg
+color_bg1 = '#141415'   # bg: matches the terminal background
+color_bg3 = '#252530'   # line
+color_blue = '#7e98e8'  # hint
+color_aqua = '#9bb4bc'  # type
+color_green = '#7fa563' # plus (git diff add)
+color_orange = '#e0a363' # number
+color_purple = '#aeaed1' # constant
+color_red = '#d8647e'   # error
+color_yellow = '#f3be7c' # warning
 # END THEME PALETTE
 
 [os]
