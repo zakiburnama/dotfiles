@@ -4,6 +4,14 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+-- Start maximized -- there's no plain config option for this, has to be
+-- done by hooking the gui-startup event and maximizing the window it
+-- creates. Applies to every new WezTerm window, not just the first.
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
 -- Default shell: PowerShell instead of cmd.exe, so Starship (prompt theme,
 -- config at starship/.config/starship.toml in this dotfiles repo) has a
 -- shell it actually supports. cmd.exe has no real Starship support.
